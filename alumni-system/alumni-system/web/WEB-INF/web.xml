@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>Alumni</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>com.web.service.utility.filter.CORSFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>AlumniController</servlet-name>
+        <servlet-class>com.controllers.alumni.AlumniController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlumniController</servlet-name>
+        <url-pattern>/AlumniController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ReportingController</servlet-name>
+        <servlet-class>com.controllers.reporting.ReportingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReportingController</servlet-name>
+        <url-pattern>/ReportingController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ManageUserController</servlet-name>
+        <servlet-class>com.controllers.user.ManageUserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManageUserController</servlet-name>
+        <url-pattern>/ManageUserController</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
