@@ -50,8 +50,8 @@
       <td>not setup yet</td>
     </tr>
     <tr>
-      <th>Tables</th>
-      <td>alumni, users</td>
+      <th>Tables (updated in the .sql)</th>
+      <td>alumni, users, event</td>
     </tr>
     <th colspan="2">External library</th>
     <tr>
