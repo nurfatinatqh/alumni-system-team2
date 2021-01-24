@@ -692,7 +692,22 @@ public class ManageUserController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        if(request.getParameter("option") != null && request.getParameter("option").equals("post-mobile-api")) {
+            response.setContentType("text/html");
+            try (PrintWriter out = response.getWriter()){
+
+                ArrayList<User> user = getInfoFromDatabase();
+                Gson gson = new Gson();
+                String jsonString = gson.toJson(user);
+
+                out.println(jsonString);
+
+                out.close();
+            }
+        }
+        else {
+            processRequest(request, response);  
+        }  
     }
 
     /**
